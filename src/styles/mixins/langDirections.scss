@@ -1,0 +1,8 @@
+@mixin langDirection($ltr-property, $ltr-value, $rtl-property, $rtl-value) {
+  [dir='ltr'] & {
+    #{$ltr-property}: $ltr-value;
+  }
+  [dir='rtl'] & {
+    #{$rtl-property}: $rtl-value;
+  }
+}

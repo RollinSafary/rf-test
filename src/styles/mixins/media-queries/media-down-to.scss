@@ -1,0 +1,7 @@
+@use './breakpoints.scss' as *;
+
+@mixin media-down-to($device) {
+  @media only screen and (min-width: calc(map-get($breakpoints, $device) + 1px)) {
+    @content;
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "jsx": true,
+    "useJSXTextNode": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended", // Import plugin
+    "plugin:import/typescript", // For TypeScript support
+    "prettier",
+    "react-perf",
+  ],
+  "plugins": ["react", "import", "@typescript-eslint", "react-hooks"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["internal"],
+          ["parent", "sibling", "index"],
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true,
+        },
+      },
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "^React$", // Ignore React
+      },
+    ],
+    // Allow SVG imports as React components
+    "import/no-unresolved": [
+      "error",
+      { "ignore": [".svg$"] }, // Ignore unresolved errors for SVG imports
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "^React$", // For TypeScript projects
+      },
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react/react-in-jsx-scope": "error", // Ensure React is in scope
+    "react-perf/no-async-in-render": "warning",
+  },
+}

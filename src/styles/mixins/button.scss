@@ -1,0 +1,60 @@
+@use 'styles/mixins/transitions.scss' as *;
+@use 'styles/mixins/media-queries/media-down-to.scss' as *;
+@use 'styles/mixins/media-queries/media-up-to.scss' as *;
+@use 'styles/mixins/font-sizes/fz14.scss' as *;
+@use 'styles/mixins/flexContainer.scss' as *;
+
+@mixin button-base {
+  padding: 0 22px;
+  display: inline-block;
+  height: 44px;
+  line-height: 1.3;
+  @include fz14;
+  border: none;
+  border-radius: 6px;
+
+  @include ease-transition;
+  cursor: pointer;
+
+  @include media-down-to('desktop-sm') {
+    margin-inline-start: 16px;
+  }
+
+  @include media-up-to('desktop-sm') {
+    text-align: center;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1299px) {
+    padding: 0 20px;
+  }
+}
+
+@mixin button-purple {
+  @include flexCenter;
+  padding: 0 30px;
+  height: 52px;
+  min-width: 100px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(180deg, #8980f7 0, #4136c1 100%);
+  box-shadow: 0 6px 12px 0 #766de866;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(180deg, #695ef3 0, #2318a5 100%);
+    box-shadow: 0 6px 12px 0 #766de866;
+  }
+
+  @include media-up-to('tablet') {
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 100%;
+    max-width: 460px;
+  }
+}
