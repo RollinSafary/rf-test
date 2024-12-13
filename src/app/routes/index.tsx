@@ -1,5 +1,5 @@
 import React from 'react';
-import RootLayout from 'components/layouts/root';
+import RootLayout from 'layouts/RootLayout';
 import NotFoundPage from 'components/pages/not-found';
 import RootPage from 'components/pages/root';
 import 'helpers/i18n';

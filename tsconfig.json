@@ -37,8 +37,8 @@
       "hooks/*": ["components/hooks/*"],
       "pages/*": ["components/pages/*"],
       "components/*": ["components/*"],
-      "helpers": ["helpers"],
-      "styles": ["styles"]
+      "helpers/*": ["helpers/*"],
+      "api/*": ["api/*"]
     }
   },
   "exclude": ["node_modules"],

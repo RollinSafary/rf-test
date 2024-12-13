@@ -23,20 +23,6 @@ const commonConfig = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-      // SCSS Modules
-      {
-        test: /\.module\.(scss|sass)$/,
-        use: [
-          'style-loader', // Inject styles into the DOM
-          'css-loader?modules', // CSS Modules enabled
-          'sass-loader', // Compile SCSS to CSS
-        ],
-      },
-      // Regular SCSS (non-modules)
-      {
-        test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
       // Rule for SVG files
       {
         test: /\.svg$/,
@@ -63,7 +49,7 @@ const commonConfig = {
   },
   resolve: {
     alias: {
-      reducerTypes: path.resolve(__dirname, 'src/redux-store/types/'),
+      reduxTypes: path.resolve(__dirname, 'src/redux-store/types/'),
       reduxSlices: path.resolve(__dirname, 'src/redux-store/slices/'),
       'redux-store': path.resolve(__dirname, 'src/redux-store/'),
       constants: path.resolve(__dirname, 'src/constants/'),
@@ -75,7 +61,7 @@ const commonConfig = {
       pages: path.resolve(__dirname, 'src/components/pages/'),
       components: path.resolve(__dirname, 'src/components/'),
       helpers: path.resolve(__dirname, 'src/helpers'),
-      styles: path.resolve(__dirname, 'src/styles'),
+      api: path.resolve(__dirname, 'src/api'),
     },
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },

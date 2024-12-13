@@ -3,9 +3,9 @@ import {
   type IOpenedModal,
   type ModalName,
   type IToastNotification,
-} from 'redux-store/types/views'
-import { AppDispatch } from 'redux-store/store'
-import slice from './slice'
+} from 'redux-store/types/views';
+import { AppDispatch } from 'redux-store/store';
+import slice from './slice';
 
 const {
   setRedirection,
@@ -13,31 +13,31 @@ const {
   removeModalFromList,
   removeAllModalsFromList,
   updateToastNotificationState,
-} = slice.actions
+} = slice.actions;
 
 const setRedirectionState =
   (value: RedirectionProps) => (dispatch: AppDispatch) => {
-    dispatch(setRedirection(value))
-  }
+    dispatch(setRedirection(value));
+  };
 
 const openModal =
   <P>(value: IOpenedModal<P>) =>
   (dispatch: AppDispatch) => {
-    dispatch(addModalToList(value))
-  }
+    dispatch(addModalToList(value));
+  };
 
 const closeModal = (name: ModalName) => (dispatch: AppDispatch) => {
-  dispatch(removeModalFromList(name))
-}
+  dispatch(removeModalFromList(name));
+};
 
 const closeAllModals = () => (dispatch: AppDispatch) => {
-  dispatch(removeAllModalsFromList([]))
-}
+  dispatch(removeAllModalsFromList([]));
+};
 
 const setToastNotificationPopUpState =
   (value: IToastNotification) => (dispatch: AppDispatch) => {
-    dispatch(updateToastNotificationState(value))
-  }
+    dispatch(updateToastNotificationState(value));
+  };
 
 export default {
   setRedirectionState,
@@ -45,4 +45,4 @@ export default {
   closeModal,
   closeAllModals,
   setToastNotificationPopUpState,
-}
+};

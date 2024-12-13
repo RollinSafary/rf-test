@@ -1,7 +1,0 @@
-@mixin linear-transition($property: all, $duration: 0.3s) {
-  transition: $property $duration linear;
-}
-
-@mixin ease-transition($property: all, $duration: 0.3s) {
-  transition: $property $duration ease;
-}
